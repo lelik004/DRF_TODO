@@ -5,6 +5,11 @@ from usersapp.models import CustomUser
 from usersapp.serializers import CustomUserSerializer
 from .models import Project, ToDo
 
+'''
+При переопределении переменнной с использованием serializers.StringRelatedField 
+поле становится "read only"
+'''
+
 
 class ProjectModelSerializer(serializers.ModelSerializer):
     group_of_users = serializers.StringRelatedField(many=True)

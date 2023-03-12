@@ -4,7 +4,7 @@ from usersapp.models import CustomUser
 
 
 class Project (models.Model):
-    name = models.CharField(max_length=64,  blank=False, verbose_name='Название проекта',)
+    name_of_project = models.CharField(max_length=64,  blank=False, verbose_name='Название проекта',)
     link_to_repo = models.URLField(max_length=300, blank=True, verbose_name='Ссылка на репозиторий')
     group_of_users = models.ManyToManyField(CustomUser,  verbose_name='Пользователи проекта')
 
