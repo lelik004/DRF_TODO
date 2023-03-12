@@ -7,3 +7,8 @@ class CustomUser(AbstractUser):
     # birthday = models.DateTimeField(blank=True, verbose_name='Дата Рождения')
     department = models.CharField(max_length=64, blank=False, verbose_name='Отдел')
     avatar = models.ImageField(blank=True, verbose_name='Аватар')
+
+    def __str__(self):
+        return f'{self.last_name}'
+
+
