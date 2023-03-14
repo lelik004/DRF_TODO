@@ -13,11 +13,11 @@ class Project (models.Model):
 
 
 class ToDo (models.Model):
-    project = models.OneToOneField(Project, on_delete=models.CASCADE, verbose_name='Название проекта задачи')
+    project = models.OneToOneField(Project, unique=False, on_delete=models.CASCADE, verbose_name='Название проекта задачи')
     todo_body = models.CharField(max_length=1024, verbose_name='Текст заметки')
     created_at = models.DateTimeField(auto_now_add=True, editable=False, verbose_name='Создана',)
     update_at = models.DateTimeField(auto_now=True, editable=False, verbose_name= 'Обновлена',)
     created_user = models.OneToOneField(
-        CustomUser, on_delete= models.CASCADE, verbose_name='Пользователь создавший задачу',
+        CustomUser, unique=False, on_delete=models.CASCADE, verbose_name='Пользователь создавший задачу',
     )
     is_active = models.BooleanField(default=False, verbose_name='Признак активности',)
