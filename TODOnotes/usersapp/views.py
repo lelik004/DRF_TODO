@@ -12,6 +12,7 @@ from .serializers import CustomUserSerializer
 
 
 class CustomUserModelViewSet(ModelViewSet):
+    renderer_classes = [JSONRenderer]
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
 
@@ -20,6 +21,7 @@ class UserListRetrieveUpdateViewSet(
     mixins.ListModelMixin, mixins.RetrieveModelMixin,
     mixins.UpdateModelMixin, GenericViewSet):
 
+    renderer_classes = [JSONRenderer]
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
 
