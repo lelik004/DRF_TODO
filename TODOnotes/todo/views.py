@@ -16,6 +16,7 @@ class ProjectLimitOffsetPagination(LimitOffsetPagination):
 
 class ProjectModelViewSet(ModelViewSet):
     # renderer_classes = [AdminRenderer]
+    # renderer_classes = [JSONRenderer]
     queryset = Project.objects.all()
     serializer_class = ProjectModelSerializer
     pagination_class = ProjectLimitOffsetPagination
