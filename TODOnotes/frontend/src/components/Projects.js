@@ -15,11 +15,14 @@ const Project = ({project}) => {
 const ProjectsList = ({projects}) => {
     return(
         <table>
+            <tr>
             <th>ID</th>
             <th>name_of_project</th>
             <th>link_to_repo</th>
             <th>group_of_users</th>
+                 </tr>
             {projects.map((project) => <Project project={project}/> )}
+
         </table>
     )
 }

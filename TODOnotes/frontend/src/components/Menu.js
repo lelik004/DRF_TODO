@@ -6,16 +6,11 @@ const Menu = ({menu}) => {
 
         <div>
             <nav>
-                <a href='/users'>Пользователи</a>
+                <Link to='/users'>Пользователи </Link>
 
-                <a href='/projects'>Проекты</a>
+                <Link to='/projects'>Проекты</Link>
 
-                <a href='/todo'>Задания</a>
-                {/*<Link to='/users'>Пользователи</Link>*/}
-
-                {/*<Link to='/projects'>Проекты</Link>*/}
-
-                {/*<Link to='/todo'>Задания</Link>*/}
+                <Link to='/todo'>Задания</Link>
             </nav>
             <hr></hr>
         </div>
