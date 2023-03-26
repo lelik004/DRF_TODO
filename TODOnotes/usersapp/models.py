@@ -9,6 +9,6 @@ class CustomUser(AbstractUser):
     avatar = models.ImageField(blank=True, verbose_name='Аватар')
 
     def __str__(self):
-        return f'{self.last_name}'
+        return f'{self.first_name} {self.last_name}'
 
 
