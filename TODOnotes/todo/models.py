@@ -21,3 +21,4 @@ class ToDo (models.Model):
         CustomUser, unique=False, on_delete=models.CASCADE, verbose_name='Пользователь создавший задачу',
     )
     is_active = models.BooleanField(default=False, verbose_name='Признак активности',)
+
