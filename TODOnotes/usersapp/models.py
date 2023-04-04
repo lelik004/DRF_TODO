@@ -8,7 +8,6 @@ class CustomUser(AbstractUser):
     department = models.CharField(max_length=64, blank=False, verbose_name='Отдел')
     avatar = models.ImageField(blank=True, verbose_name='Аватар')
 
-
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 

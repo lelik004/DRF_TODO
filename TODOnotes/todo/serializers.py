@@ -21,8 +21,8 @@ class ProjectModelSerializer(serializers.ModelSerializer):
 
 
 class ToDoModelSerializer(serializers.ModelSerializer):
-    created_user = serializers.StringRelatedField()
-    project = serializers.StringRelatedField()
+    # created_user = serializers.StringRelatedField()
+    # project = serializers.StringRelatedField()
 
     class Meta:
         model = ToDo
