@@ -8,10 +8,11 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework import mixins
 
 from .models import CustomUser
-from .serializers import CustomUserSerializer
+from .serializers import CustomUserSerializer, CustomUserSerializerBase
 
 
 class CustomUserModelViewSet(ModelViewSet):
+    # renderer_classes = [JSONRenderer]
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
 
@@ -20,6 +21,12 @@ class UserListRetrieveUpdateViewSet(
     mixins.ListModelMixin, mixins.RetrieveModelMixin,
     mixins.UpdateModelMixin, GenericViewSet):
 
+    # renderer_classes = [JSONRenderer]
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
+
+    def get_serializer_class(self):
+        if self.request.version == '2.0':
+            return CustomUserSerializerBase
+        return CustomUserSerializer
 

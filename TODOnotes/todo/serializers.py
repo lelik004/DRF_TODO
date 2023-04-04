@@ -12,11 +12,12 @@ from .models import Project, ToDo
 
 
 class ProjectModelSerializer(serializers.ModelSerializer):
-    group_of_users = serializers.StringRelatedField(many=True)
+    # group_of_users = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Project
         fields = '__all__'
+        # fields = ('pk', 'name_of_project', 'link_to_repo')
 
 
 class ToDoModelSerializer(serializers.ModelSerializer):
